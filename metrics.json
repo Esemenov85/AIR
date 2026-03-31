@@ -1,0 +1,187 @@
+{
+  "total_links": 115,
+  "russian_links": 19,
+  "regional_links": 58,
+  "international_links": 38,
+  "country_counts": {
+    "Другая": 19,
+    "Международная организация": 3,
+    "Китай": 2,
+    "Индия": 2,
+    "США (исламская экономика)": 1,
+    "Саудовская Аравия": 1,
+    "Швейцария": 1,
+    "Катар": 1,
+    "Малайзия": 1,
+    "Кипр": 1,
+    "Казахстан": 1,
+    "Италия": 1,
+    "Франция": 1,
+    "Азербайджан": 1,
+    "Южная Корея": 1,
+    "Германия": 1
+  },
+  "investment_links_count": 32,
+  "investment_links": [
+    {
+      "sheet": "Инвестагентства международные",
+      "description": "Инвестагентства международные (строка 3, колонка 2)",
+      "url": "https://waipa.org/members"
+    },
+    {
+      "sheet": "Отчеты_Рейтинги",
+      "description": "Отчеты_Рейтинги (строка 3, колонка 3)",
+      "url": "https://unctad.org/"
+    },
+    {
+      "sheet": "Отчеты_Рейтинги",
+      "description": "Отчеты_Рейтинги (строка 4, колонка 3)",
+      "url": "https://www.imf.org/ru/home"
+    },
+    {
+      "sheet": "Отчеты_Рейтинги",
+      "description": "Отчеты_Рейтинги (строка 5, колонка 3)",
+      "url": "https://www.worldbank.org/ext/en/home"
+    },
+    {
+      "sheet": "Отчеты_Рейтинги",
+      "description": "Отчеты_Рейтинги (строка 8, колонка 3)",
+      "url": "https://asi.ru/"
+    },
+    {
+      "sheet": "Отчеты_Рейтинги",
+      "description": "Отчеты_Рейтинги (строка 9, колонка 3)",
+      "url": "https://www.rdif.ru/Numbers/"
+    },
+    {
+      "sheet": "Отчеты_Рейтинги",
+      "description": "Отчеты_Рейтинги (строка 10, колонка 3)",
+      "url": "https://www.investinregions.ru/partners/nra/"
+    },
+    {
+      "sheet": "Исламская экономика",
+      "description": "Исламская экономика (строка 3, колонка 2)",
+      "url": "https://www.dinarstandard.com/"
+    },
+    {
+      "sheet": "Инвестагентства РФ",
+      "description": "Инвестагентства РФ (строка 4, колонка 2)",
+      "url": "https://www.investinregions.ru/"
+    },
+    {
+      "sheet": "Международные издания",
+      "description": "Международные издания (строка 5, колонка 3)",
+      "url": "https://www.chinadaily.com.cn/business"
+    },
+    {
+      "sheet": "Международные издания",
+      "description": "Международные издания (строка 6, колонка 3)",
+      "url": "https://www.scmp.com/business"
+    },
+    {
+      "sheet": "Международные издания",
+      "description": "Международные издания (строка 8, колонка 3)",
+      "url": "http://www.xinhuanet.com/english/economy/"
+    },
+    {
+      "sheet": "Международные издания",
+      "description": "Международные издания (строка 12, колонка 3)",
+      "url": "https://www.business-standard.com"
+    },
+    {
+      "sheet": "Международные издания",
+      "description": "Международные издания (строка 17, колонка 3)",
+      "url": "https://www.straitstimes.com/business"
+    },
+    {
+      "sheet": "Международные издания",
+      "description": "Международные издания (строка 18, колонка 3)",
+      "url": "https://www.thejakartapost.com/business"
+    },
+    {
+      "sheet": "Международные издания",
+      "description": "Международные издания (строка 29, колонка 3)",
+      "url": "https://www.cnbc.com/business/"
+    },
+    {
+      "sheet": "Международные издания",
+      "description": "Международные издания (строка 32, колонка 3)",
+      "url": "https://www.businessinsider.com/finance"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 3, колонка 3)",
+      "url": "https://investsaudi.sa/medias/MISA-Service-manual-12-3-edition-english.pdf?context=bWFzdGVyfHBvcnRhbC1tZWRpYXwyNjM1MDkzfGFwcGxpY2F0aW9uL3BkZnxwb3J0YWwtbWVkaWEvaDYxL2g4ZS85MDkxOTM5ODI3NzQyLnBkZnxkZjk4ZWYwN2RiNzdkMzAzNzUzZjg1ODUyZjJlM2Y5YjBlYmMwMjQwYzkwM2QzNDM3YTE2OTAzYTY1OWJjYzE0"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 4, колонка 3)",
+      "url": "https://www.s-ge.com/sites/default/files/publication/free/handbook-for-investors-s-ge-2023-en_0_0.pdf?_gl=1*n34sag*_up*MQ..*_ga*MzIyMTA4NzQyLjE3NTEwMzA3NTU.*_ga_DBD74QHYTV*czE3NTEwMzA3NTQkbzEkZzEkdDE3NTEwMzEwMjYkajYwJGwwJGgw"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 6, колонка 3)",
+      "url": "https://www.invest.qa/storage/8153/Invest_Qatar_Annual_Report_2024_-_EN.pdf?_gl=1*5owbne*_up*MQ..*_ga*ODgzOTY2MDM1LjE3NTEwMTQ0OTA.*_ga_0J8N3CTTMC*czE3NTEwMTQ0ODYkbzEkZzAkdDE3NTEwMTQ0ODYkajYwJGwwJGgw"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 9, колонка 3)",
+      "url": "https://www.mida.gov.my/wp-content/uploads/2024/09/MIDA_WHY-MALAYSIA-2023-13092024-V6.pdf"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 12, колонка 3)",
+      "url": "https://regional.chinadaily.com.cn/pdf/2025ShanghaiForeignInvestmentGuide.pdf"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 14, колонка 3)",
+      "url": "https://www.investindia.gov.in/brochure"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 16, колонка 3)",
+      "url": "https://www.investcyprus.org.cy/wp-content/uploads/2024/10/why-invest-in-cyprus-oct-2024-lr.pdf"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 18, колонка 3)",
+      "url": "https://invest.gov.kz/upload/investor-guide/investor-guide-10-07-2024-eng.pdf"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 20, колонка 3)",
+      "url": "https://www.ice.it/en/sites/default/files/inline-files/Guide_DB_2024.pdf"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 22, колонка 3)",
+      "url": "https://en.media.businessfrance.fr/news/annual-report-foreign-investment-in-france-2024-e48f8-aba4d.html"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 24, колонка 3)",
+      "url": "https://azpromo.az/storage/2011/T9kCkZkGSL-Investment-Guide-2025.pdf"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 26, колонка 3)",
+      "url": "https://www.investkorea.org/ik-en/index.do"
+    },
+    {
+      "sheet": "Гиды инвесторов",
+      "description": "Гиды инвесторов (строка 28, колонка 3)",
+      "url": "https://www.gtai.de/en/invest/investment-guide"
+    },
+    {
+      "sheet": "Федеральные мин-ва и ведомства",
+      "description": "Федеральные мин-ва и ведомства (строка 4, колонка 2)",
+      "url": "https://invest.economy.gov.ru/"
+    },
+    {
+      "sheet": "Федеральные мин-ва и ведомства",
+      "description": "Федеральные мин-ва и ведомства (строка 5, колонка 2)",
+      "url": "https://www.economy.gov.ru/"
+    }
+  ]
+}

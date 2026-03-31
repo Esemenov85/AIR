@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ ссылок Агентства Инвестиционного Развития РТ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #28a745;
+            --accent: #ffc107;
+            --dark: #343a40;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --border-radius: 12px;
+            --box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #003d82 100%);
+            color: white;
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo i {
+            font-size: 2.5rem;
+        }
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .logo p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        .tabs {
+            display: flex;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 18px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+        .tab:hover {
+            background-color: #f1f1f1;
+        }
+        .tab.active {
+            border-bottom-color: var(--primary);
+            color: var(--primary);
+            background-color: #e3f2fd;
+        }
+        .tab-content {
+            display: none;
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: transform 0.3s;
+            border-top: 6px solid var(--primary);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        .card .number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 15px 0;
+        }
+        .card .desc {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+        .card.investment {
+            border-top-color: var(--secondary);
+        }
+        .card.international {
+            border-top-color: var(--accent);
+        }
+        .card.regional {
+            border-top-color: #17a2b8;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+        }
+        .table-container {
+            overflow-x: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        thead {
+            background-color: var(--primary);
+            color: white;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+        .country-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .country-badge {
+            background: #e9ecef;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+        .country-badge .count {
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        .investment-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .investment-list li {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+        .investment-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .investment-list a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            border-top: 1px solid #dee2e6;
+            margin-top: 40px;
+        }
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .dashboard-cards {
+                grid-template-columns: 1fr;
+            }
+            .tabs {
+                flex-direction: column;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <div>
+                    <h1>Анализ ссылок АИР РТ</h1>
+                    <p>Дашборд по использованию информационных ресурсов в работе Агентства Инвестиционного Развития Республики Татарстан</p>
+                </div>
+            </div>
+            <div>
+                <a href="https://invest.tatarstan.ru/" target="_blank" style="color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-external-link-alt"></i> Сайт АИР РТ
+                </a>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="dashboard">Главная</div>
+            <div class="tab" data-tab="links">Все ссылки</div>
+            <div class="tab" data-tab="investment">Инвестиционные ресурсы</div>
+            <div class="tab" data-tab="about">О проекте</div>
+        </div>
+
+        <!-- Вкладка Главная -->
+        <div id="dashboard" class="tab-content active">
+            <h2 class="section-title">Ключевые метрики</h2>
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Всего ссылок</h3>
+                    <div class="number" id="total-links">115</div>
+                    <p class="desc">Используется в работе АИР РТ</p>
+                </div>
+                <div class="card">
+                    <h3>Российские</h3>
+                    <div class="number" id="russian-links">19</div>
+                    <p class="desc">Федеральные и общероссийские порталы</p>
+                </div>
+                <div class="card regional">
+                    <h3>Региональные (РТ)</h3>
+                    <div class="number" id="regional-links">58</div>
+                    <p class="desc">Сайты Республики Татарстан</p>
+                </div>
+                <div class="card international">
+                    <h3>Международные</h3>
+                    <div class="number" id="international-links">38</div>
+                    <p class="desc">Зарубежные ресурсы</p>
+                </div>
+                <div class="card investment">
+                    <h3>Инвестиционные</h3>
+                    <div class="number" id="investment-links">32</div>
+                    <p class="desc">Ссылки, связанные с инвестициями</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Разбивка международных ссылок по странам</h2>
+            <div class="country-list" id="country-list">
+                <!-- заполнится через JS -->
+            </div>
+
+            <div class="note">
+                <i class="fas fa-info-circle"></i> <strong>Пояснение:</strong> Данные получены из файла "Ссылки на сайты_13.03.2026.xlsx". Категоризация выполнена автоматически на основе доменов и ключевых слов.
+            </div>
+        </div>
+
+        <!-- Вкладка Все ссылки -->
+        <div id="links" class="tab-content">
+            <h2 class="section-title">Все ссылки с листов Excel</h2>
+            <p>Таблица содержит все извлечённые ссылки, их описание, лист, строку и колонку в исходном файле.</p>
+            <div class="table-container">
+                <table id="links-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Лист</th>
+                            <th>Описание</th>
+                            <th>Ссылка</th>
+                            <th>Строка</th>
+                            <th>Колонка</th>
+                            <th>Категория</th>
+                        </tr>
+                    </thead>
+                    <tbody id="links-table-body">
+                        <!-- заполнится через JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Вкладка Инвестиционные ресурсы -->
+        <div id="investment" class="tab-content">
+            <h2 class="section-title">Ссылки, связанные с инвестициями</h2>
+            <p>Перечень ресурсов, содержащих информацию об инвестициях, гидах для инвесторов, отчётах и рейтингах.</p>
+            <ul class="investment-list" id="investment-list">
+                <!-- заполнится через JS -->
+            </ul>
+        </div>
+
+        <!-- Вкладка О проекте -->
+        <div id="about" class="tab-content">
+            <h2 class="section-title">О проекте</h2>
+            <p>Данный дашборд создан для анализа использования внешних ссылок в работе <strong>Агентства Инвестиционного Развития Республики Татарстан</strong>.</p>
+            <p>Исходные данные — Excel-файл "Ссылки на сайты_13.03.2026.xlsx", содержащий перечень ссылок на различные информационные ресурсы, используемые в работе.</p>
+            <p><strong>Цели анализа:</strong></p>
+            <ul style="padding-left: 20px; margin-top: 10px;">
+                <li>Определить общее количество используемых ссылок.</li>
+                <li>Классифицировать ссылки на российские (включая региональные) и международные.</li>
+                <li>Выявить страны, на которые приходится международная активность.</li>
+                <li>Отдельно выделить ресурсы, непосредственно связанные с инвестиционной тематикой.</li>
+            </ul>
+            <p>Все данные актуальны на момент обработки файла (март 2026 года).</p>
+            
+        </div>
+
+        <footer>
+            <p>© 2026 Аналитический дашборд АИР РТ. Данные носят информационный характер.</p>
+            <p>Связь: <a href="mailto:example@invest.tatarstan.ru">example@invest.tatarstan.ru</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Данные из enriched_links_fixed2.csv (встроены для работы без CORS)
+        const linksData = [
+            {"sheet": "МР РТ", "description": "МР РТ (строка 1; колонка 2)", "url": "https://agryz.tatarstan.ru/", "row": "1", "col": "2", "category": "regional", "country": "Другая", "investment": false},
+            {"sheet": "МР РТ", "description": "МР РТ (строка 2; колонка 2)", "url": "https://aznakayevo.tatarstan.ru/", "row": "2", "col": "2", "category": "regional", "country": "Другая", "investment": false},
+            {"sheet": "МР РТ", "description": "МР РТ (строка 3; колонка 2)", "url": "https://aksubayevo.tatarstan.ru/", "row": "3", "col": "2", "category": "regional", "country": "Другая", "investment": false},
+            {"sheet": "МР РТ", "description": "МР РТ (строка 4; колонка 2)", "url": "https://aktanysh.tatarstan.ru/", "row": "4", "col": "2", "category": "regional", "country": "Другая", "investment": false},
+            {"sheet": "МР РТ", "description": "МР РТ (строка 5; колонка 2)", "url": "https://alekseevskiy.tatarstan.ru/", "row": "5", "col": "2", "category": "regional", "country": "Другая", "investment": false},
+            {"sheet": "МР РТ", "description": "МР РТ (строка 6; колонка 2)", "url": "https://alkeevskiy.tatarstan.ru/", "row": "6", "col": "2", "category": "regional", "country": "Другая", "investment": false},
+            {"sheet": "МР РТ", "description": "МР РТ (строка 7; колонка 2)", "url": "https://almetyevsk.tatarstan.ru/", "row": "7", "col": "2", "category": "regional", "country": "Другая", "investment": false},
+            {"sheet": "МР РТ", "description": "МР РТ (строка 8; колонка 2)", "url": "https://apastovo.tatarstan.ru/", "row": "8", "col": "2", "category": "regional", "country": "Другая", "investment": false},
+            {"sheet": "МР РТ", "description": "МР РТ (строка 9; колонка 2)", "url": "https://arsk.tatarstan.ru/", "row": "9", "col": "2", "category": "regional", "country": "Другая", "investment": false},
+            {"sheet": "МР РТ", "description": "МР РТ (строка
