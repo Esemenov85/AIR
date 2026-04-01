@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ ссылок Агентства Инвестиционного Развития РТ</title>
+    <meta name="description" content="Дашборд анализа ссылок, используемых Агентством Инвестиционного Развития Республики Татарстан. Визуализация метрик, категорий и стран.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.min.css">
+    <!-- Микроразметка Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "Агентство Инвестиционного Развития Республики Татарстан",
+                "url": "https://invest.tatarstan.ru/",
+                "logo": "https://invest.tatarstan.ru/static/images/logo.png",
+                "description": "Агентство, ответственное за привлечение инвестиций и развитие инвестиционного климата в Республике Татарстан."
+            },
+            {
+                "@type": "Dataset",
+                "name": "Анализ ссылок АИР РТ",
+                "description": "Дашборд анализа ссылок, используемых Агентством Инвестиционного Развития Республики Татарстан. Визуализация метрик, категорий и стран.",
+                "url": "https://example.com/dashboard.html",
+                "license": "https://creativecommons.org/licenses/by/4.0/",
+                "creator": {
+                    "@type": "Organization",
+                    "name": "АИР РТ"
+                },
+                "datePublished": "2026-03-31",
+                "keywords": ["инвестиции", "ссылки", "анализ", "Татарстан", "международные", "региональные", "дашборд"],
+                "variableMeasured": [
+                    "Количество ссылок",
+                    "Российские ссылки",
+                    "Региональные ссылки",
+                    "Международные ссылки",
+                    "Инвестиционные ссылки"
+                ],
+                "distribution": {
+                    "@type": "DataDownload",
+                    "encodingFormat": "CSV",
+                    "contentUrl": "./enriched_links_fixed.csv"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Главная",
+                        "item": "#dashboard"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Все ссылки",
+                        "item": "#links"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Инвестиционные ресурсы",
+                        "item": "#investment"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "name": "О проекте",
+                        "item": "#about"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <div>
+                    <h1>Анализ ссылок АИР РТ</h1>
+                    <p>Дашборд по использованию информационных ресурсов в работе Агентства Инвестиционного Развития Республики Татарстан</p>
+                </div>
+            </div>
+            <div>
+                <a href="https://invest.tatarstan.ru/" target="_blank" style="color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-external-link-alt"></i> Сайт АИР РТ
+                </a>
+            </div>
+        </header>
+
+        <div class="tabs" role="tablist">
+            <div class="tab active" role="tab" aria-selected="true" aria-controls="dashboard" data-tab="dashboard" tabindex="0">Главная</div>
+            <div class="tab" role="tab" aria-selected="false" aria-controls="links" data-tab="links" tabindex="0">Все ссылки</div>
+            <div class="tab" role="tab" aria-selected="false" aria-controls="investment" data-tab="investment" tabindex="0">Инвестиционные ресурсы</div>
+            <div class="tab" role="tab" aria-selected="false" aria-controls="about" data-tab="about" tabindex="0">О проекте</div>
+        </div>
+
+        <!-- Вкладка Главная -->
+        <div id="dashboard" class="tab-content active">
+            <h2 class="section-title">Ключевые метрики</h2>
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Всего ссылок</h3>
+                    <div class="number" id="total-links">115</div>
+                    <p class="desc">Используется в работе АИР РТ</p>
+                </div>
+                <div class="card">
+                    <h3>Российские</h3>
+                    <div class="number" id="russian-links">19</div>
+                    <p class="desc">Федеральные и общероссийские порталы</p>
+                </div>
+                <div class="card regional">
+                    <h3>Региональные (РТ)</h3>
+                    <div class="number" id="regional-links">58</div>
+                    <p class="desc">Сайты Республики Татарстан</p>
+                </div>
+                <div class="card international">
+                    <h3>Международные</h3>
+                    <div class="number" id="international-links">38</div>
+                    <p class="desc">Зарубежные ресурсы</p>
+                </div>
+                <div class="card investment">
+                    <h3>Инвестиционные</h3>
+                    <div class="number" id="investment-links">32</div>
+                    <p class="desc">Ссылки, связанные с инвестициями</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Разбивка международных ссылок по странам</h2>
+            <div class="country-list" id="country-list">
+                <!-- заполнится через JS -->
+            </div>
+
+            <div class="note">
+                <i class="fas fa-info-circle"></i> <strong>Пояснение:</strong> Данные получены из файла "Ссылки на сайты_13.03.2026.xlsx". Категоризация выполнена автоматически на основе доменов и ключевых слов.
+            </div>
+        </div>
+
+        <!-- Вкладка Все ссылки -->
+        <div id="links" class="tab-content">
+            <h2 class="section-title">Все ссылки с листов Excel</h2>
+            <p>Таблица содержит все извлечённые ссылки, их описание, лист, строку и колонку в исходном файле.</p>
+            <div class="table-container">
+                <table id="links-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">№</th>
+                            <th scope="col">Лист</th>
+                            <th scope="col">Описание</th>
+                            <th scope="col">Ссылка</th>
+                            <th scope="col">Строка</th>
+                            <th scope="col">Колонка</th>
+                            <th scope="col">Категория</th>
+                        </tr>
+                    </thead>
+                    <tbody id="links-table-body">
+                        <!-- заполнится через JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Вкладка Инвестиционные ресурсы -->
+        <div id="investment" class="tab-content">
+            <h2 class="section-title">Ссылки, связанные с инвестициями</h2>
+            <p>Перечень ресурсов, содержащих информацию об инвестициях, гидах для инвесторов, отчётах и рейтингах.</p>
+            <ul class="investment-list" id="investment-list">
+                <!-- заполнится через JS -->
+            </ul>
+        </div>
+
+        <!-- Вкладка О проекте -->
+        <div id="about" class="tab-content">
+            <h2 class="section-title">О проекте</h2>
+            <p>Данный дашборд создан для анализа использования внешних ссылок в работе <strong>Агентства Инвестиционного Развития Республики Татарстан</strong>.</p>
+            <p>Исходные данные — Excel-файл "Ссылки на сайты_13.03.2026.xlsx", содержащий перечень ссылок на различные информационные ресурсы, используемые в работе.</p>
+            <p><strong>Цели анализа:</strong></p>
+            <ul style="padding-left: 20px; margin-top: 10px;">
+                <li>Определить общее количество используемых ссылок.</li>
+                <li>Классифицировать ссылки на российские (включая региональные) и международные.</li>
+                <li>Выявить страны, на которые приходится международная активность.</li>
+                <li>Отдельно выделить ресурсы, непосредственно связанные с инвестиционной тематикой.</li>
+            </ul>
+            <p>Все данные актуальны на момент обработки файла (март 2026 года).</p>
+            
+        </div>
+
+        <footer>
+            <p>© 2026 Аналитический дашборд АИР РТ. Данные носят информационный характер.</p>
+            <p>Связь: <a href="mailto:example@invest.tatarstan.ru">example@invest.tatarstan.ru</a></p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        // Вычисление метрик
+        const metrics = {
+            total_links: linksData.length,
+            russian_links: linksData.filter(l => l.category === 'russian').length,
+            regional_links: linksData.filter(l => l.category === 'regional').length,
+            international_links: linksData.filter(l => l.category === 'international').length,
+            investment_links_count: linksData.filter(l => l.investment).length,
+            country_counts: {}
+        };
+
+        // Подсчет стран для международных ссылок
+        linksData.filter(l => l.category === 'international').forEach(l => {
+            const c = l.country;
+            metrics.country_counts[c] = (metrics.country_counts[c] || 0) + 1;
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Заполняем метрики
+            document.getElementById('total-links').textContent = metrics.total_links;
+            document.getElementById('russian-links').textContent = metrics.russian_links;
+            document.getElementById('regional-links').textContent = metrics.regional_links;
+            document.getElementById('international-links').textContent = metrics.international_links;
+            document.getElementById('investment-links').textContent = metrics.investment_links_count;
+
+            // Заполняем список стран
+            const countryList = document.getElementById('country-list');
+            for (const [country, count] of Object.entries(metrics.country_counts)) {
+                const badge = document.createElement('div');
+                badge.className = 'country-badge';
+                const countSpan = document.createElement('span');
+                countSpan.className = 'count';
+                countSpan.textContent = count;
+                badge.appendChild(countSpan);
+                badge.appendChild(document.createTextNode(` ${country}`));
+                countryList.appendChild(badge);
+            }
+
+            // Заполняем таблицу ссылок
+            const tbody = document.getElementById('links-table-body');
+            linksData.forEach((link, index) => {
+                const tr = document.createElement('tr');
+                
+                const td1 = document.createElement('td');
+                td1.textContent = index + 1;
+                tr.appendChild(td1);
+                
+                const td2 = document.createElement('td');
+                td2.textContent = link.sheet;
+                tr.appendChild(td2);
+                
+                const td3 = document.createElement('td');
+                td3.textContent = link.description;
+                tr.appendChild(td3);
+                
+                const td4 = document.createElement('td');
+                const a = document.createElement('a');
+                a.href = link.url;
+                a.target = '_blank';
+                a.textContent = link.url;
+                td4.appendChild(a);
+                tr.appendChild(td4);
+                
+                const td5 = document.createElement('td');
+                td5.textContent = link.row;
+                tr.appendChild(td5);
+                
+                const td6 = document.createElement('td');
+                td6.textContent = link.col;
+                tr.appendChild(td6);
+                
+                const td7 = document.createElement('td');
+                const span = document.createElement('span');
+                span.className = 'badge';
+                span.textContent = link.category;
+                td7.appendChild(span);
+                tr.appendChild(td7);
+                
+                tbody.appendChild(tr);
+            });
+
+            // Заполняем инвестиционные ссылки
+            const investmentList = document.getElementById('investment-list');
+            const investmentLinks = linksData.filter(l => l.investment);
+            investmentLinks.forEach(link => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = link.url;
+                a.target = '_blank';
+                a.textContent = link.description;
+                li.appendChild(a);
+                li.appendChild(document.createTextNode(` (лист: ${link.sheet})`));
+                investmentList.appendChild(li);
+            });
+
+            // Переключение вкладок
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    switchTab(tabId);
+                });
+                // Поддержка клавиатуры
+                tab.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const tabId = tab.getAttribute('data-tab');
+                        switchTab(tabId);
+                    }
+                });
+            });
+
+            // Удаляем блок "Технологии" на вкладке "О проекте"
+            const techNote = document.querySelector('#about .note');
+            if (techNote) techNote.remove();
+        });
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab').forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            const activeTab = document.querySelector(`.tab[data-tab='${tabId}']`);
+            activeTab.classList.add('active');
+            activeTab.setAttribute('aria-selected', 'true');
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
